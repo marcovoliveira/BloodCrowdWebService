@@ -3,4 +3,3 @@ c:\users\marco\documents\visual studio 2017\Projects\BloodCrowdService\BloodCrow
 c:\users\marco\documents\visual studio 2017\Projects\BloodCrowdService\BloodCrowdService\bin\BloodCrowdService.pdb
 c:\users\marco\documents\visual studio 2017\Projects\BloodCrowdService\BloodCrowdService\obj\Debug\BloodCrowdService.dll
 c:\users\marco\documents\visual studio 2017\Projects\BloodCrowdService\BloodCrowdService\obj\Debug\BloodCrowdService.pdb
-c:\users\marco\documents\visual studio 2017\Projects\BloodCrowdService\BloodCrowdService\obj\Debug\BloodCrowdService.csprojResolveAssemblyReference.cache

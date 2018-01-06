@@ -19,6 +19,11 @@ namespace BloodCrowdService
         [Description("Return all donators")]
         List<Donator> GetDonators();
 
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/donatorsshort")]
+        [Description("Return a short info of all donators")]
+        List<ShortDonator> GetDonatorsShort();
+
 
         // XML NAO SAI DO SERVIÇO! Tudo o que passamos é objetos de classes! 
 
@@ -40,6 +45,12 @@ namespace BloodCrowdService
         // Procurar Dador especifico Por Nome, Idade, Grupo Sanguineo, Compatibilidade, IMC  ( SO PARA ANDROID) 
 
         [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/donatorsnumber/{number}")]
+        [Description("Return donators by number")]
+        List<Donator> GetDonatorsByNumber(string number);
+
+
+        [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/{nome}")] 
         [Description("Return donators by name")]
         List<Donator> GetDonatorsByName(string nome);
@@ -55,26 +66,26 @@ namespace BloodCrowdService
         // Procurar por grupo sanguineo
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByBloodType/{bloodType}")]
-        [Description("Return donators by age")]
+        [Description("Return donators by bloodtype")]
         List<Donator> GetDonatorsByBloodType(string bloodType);
 
         //Procurar por compatibilidade de grupo sanguineo
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByBloodTypeCompatibility/{bloodType}")]
-        [Description("Return donators by age")]
+        [Description("Return donators by bloodtype compatibility")]
         List<Donator> GetDonatorsByBloodTypeCompatibility(string bloodType);
 
         //Procurar por Imc menor ou igual
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByImcMenorOuIgual/{imc}")]
-        [Description("Return donators by age")]
+        [Description("Return donators by imc less or equal")]
         List<Donator> GetDonatorsByImcMenorOuIgual(string imc);
 
 
         //Procurar por IMC maior ou igual
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByImcMaiorOuIgual/{imc}")]
-        [Description("Return donators by age")]
+        [Description("Return donators by imc equal or less")]
         List<Donator> GetDonatorsByImcMaiorOuIgual(string imc);
 
         //Calcular IMC
@@ -91,6 +102,33 @@ namespace BloodCrowdService
 
 
     // Use um contrato de dados como ilustrado no exemplo abaixo para adicionar tipos compostos a operações de serviço.
+
+    [DataContract]
+    public class ShortDonator
+    {
+        public ShortDonator(int number, String firstName, String lastName, String bloodType)
+        {
+            this.Number = number;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.BloodType = bloodType;
+        }
+
+        [DataMember]
+        public int Number { get; private set; }
+
+        [DataMember]
+        public String FirstName { get; private set; }
+
+        [DataMember]
+        public String LastName { get; private set; }
+
+        [DataMember]
+        public String BloodType { get; private set; }
+
+    }
+
+
     [DataContract]
     public class Donator
     {
