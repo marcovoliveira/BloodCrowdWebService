@@ -53,40 +53,40 @@ namespace BloodCrowdService
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/{nome}")] 
         [Description("Return donators by name")]
-        List<Donator> GetDonatorsByName(string nome);
+        List<ShortDonator> GetDonatorsByName(string nome);
 
 
         // Procurar por idade
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByAge/{age}")]
         [Description("Return donators by age")]
-        List<Donator> GetDonatorsByAge(string age);
+        List<ShortDonator> GetDonatorsByAge(string age);
 
 
         // Procurar por grupo sanguineo
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByBloodType/{bloodType}")]
         [Description("Return donators by bloodtype")]
-        List<Donator> GetDonatorsByBloodType(string bloodType);
+        List<ShortDonator> GetDonatorsByBloodType(string bloodType);
 
         //Procurar por compatibilidade de grupo sanguineo
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByBloodTypeCompatibility/{bloodType}")]
         [Description("Return donators by bloodtype compatibility")]
-        List<Donator> GetDonatorsByBloodTypeCompatibility(string bloodType);
+        List<ShortDonator> GetDonatorsByBloodTypeCompatibility(string bloodType);
 
         //Procurar por Imc menor ou igual
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByImcMenorOuIgual/{imc}")]
         [Description("Return donators by imc less or equal")]
-        List<Donator> GetDonatorsByImcMenorOuIgual(string imc);
+        List<ShortDonator> GetDonatorsByImcMenorOuIgual(string imc);
 
 
         //Procurar por IMC maior ou igual
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/donators/getByImcMaiorOuIgual/{imc}")]
         [Description("Return donators by imc equal or less")]
-        List<Donator> GetDonatorsByImcMaiorOuIgual(string imc);
+        List<ShortDonator> GetDonatorsByImcMaiorOuIgual(string imc);
 
         //Calcular IMC
         [OperationContract]
