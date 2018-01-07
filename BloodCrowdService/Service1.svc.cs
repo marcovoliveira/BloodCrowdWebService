@@ -665,7 +665,7 @@ namespace BloodCrowdService
             }
             catch (Exception e)
             {
-                throw new FaultException(e.ToString());
+                
 
             }
 
@@ -727,7 +727,7 @@ namespace BloodCrowdService
             }
             catch (Exception e)
             {
-                throw new FaultException(e.ToString());
+                
 
             }
 
