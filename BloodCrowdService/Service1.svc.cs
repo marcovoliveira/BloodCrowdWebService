@@ -57,7 +57,7 @@ namespace BloodCrowdService
                     String empresa = dm.Element("Empresa").Value;
                     String veiculo = dm.Element("Veiculo").Value;
                     String tipo_sangue = dm.Element("Tipo_Sanguineo").Value;
-                    double peso = Convert.ToDouble(dm.Element("Peso").Value);
+                    double peso = Convert.ToDouble(dm.Element("Peso").Value, CultureInfo.InvariantCulture);
                     double altura = Convert.ToDouble(dm.Element("Altura").Value);
                     String guid = dm.Element("GUID").Value;
                     String latitude = dm.Element("Latitude").Value;
@@ -598,7 +598,7 @@ namespace BloodCrowdService
         public double CalcularImc(string peso, string altura)
         { 
         
-            double pesoC = Convert.ToDouble(peso);
+            double pesoC = Convert.ToDouble(peso, CultureInfo.InvariantCulture);
             double alturaC = Convert.ToDouble(altura);
             double imc = 0;
             imc = pesoC / ((alturaC * alturaC) / 10000);
