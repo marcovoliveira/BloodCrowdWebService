@@ -31,14 +31,14 @@ namespace BloodCrowdService
 
             IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
             IFormatProvider cultureint = new System.Globalization.CultureInfo("pt-PT", true);
-
-
+      
             try
             {
                 XDocument xdoc = XDocument.Load(FILEPATH);
 
                 foreach (var dm in xdoc.Descendants("Donator"))
                 {
+
                     int id = Convert.ToInt32(dm.Attribute("id").Value);
                     String sexo = dm.Element("Sexo").Value;
                     String primeiro_nome = dm.Element("Primeiro_Nome").Value;
