@@ -59,7 +59,7 @@ namespace BloodCrowdService
                     String empresa = dm.Element("Empresa").Value;
                     String veiculo = dm.Element("Veiculo").Value;
                     String tipo_sangue = dm.Element("Tipo_Sanguineo").Value;
-                    double peso = Convert.ToDouble(dm.Element("Peso").Value);
+                    double peso = Convert.ToDouble(dm.Element("Peso").Value, CultureInfo.GetCultureInfo("pt-PT"));
                     double altura = Convert.ToDouble(dm.Element("Altura").Value);
                     String guid = dm.Element("GUID").Value;
                     String latitude = dm.Element("Latitude").Value;
