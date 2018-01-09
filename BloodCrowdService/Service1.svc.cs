@@ -30,6 +30,8 @@ namespace BloodCrowdService
             List<Donator> listDonators = new List<Donator>();
 
             IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+            IFormatProvider cultureInt = new System.Globalization.CultureInfo("pt-PT", true);
+
 
             try
             {
@@ -58,11 +60,12 @@ namespace BloodCrowdService
                     String veiculo = dm.Element("Veiculo").Value;
                     String tipo_sangue = dm.Element("Tipo_Sanguineo").Value;
                     double peso = Convert.ToDouble(dm.Element("Peso").Value);
-                    double altura = Convert.ToDouble(dm.Element("Altura").Value);
+                    double altura = Convert.ToDouble(dm.Element("Altura").Value, cultureInt);
                     String guid = dm.Element("GUID").Value;
                     String latitude = dm.Element("Latitude").Value;
                     String longitude = dm.Element("Longitude").Value;
                     double IMC = CalcularImc(Convert.ToString(peso), Convert.ToString(altura));
+
 
                     listDonators.Add(new Donator(id, sexo, primeiro_nome, ultimo_nome, rua, cidade, distrito, codigo_postal, email, username,
                         password, telefone, nome_mae, dn, idade, ocupacao, empresa, veiculo, tipo_sangue, peso, altura,
@@ -83,8 +86,6 @@ namespace BloodCrowdService
         {
 
             List<ShortDonator> listDonators = new List<ShortDonator>();
-
-            IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
 
             try
             {
