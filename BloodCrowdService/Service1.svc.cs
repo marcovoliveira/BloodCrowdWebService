@@ -601,10 +601,10 @@ namespace BloodCrowdService
 
         public double CalcularImc(string peso, string altura)
         {
-            IFormatProvider cultureint = new System.Globalization.CultureInfo("pt-PT", true);
+            
 
-            double pesoC = Convert.ToDouble(peso, cultureint);
-            double alturaC = Convert.ToDouble(altura, cultureint);
+            double pesoC = Convert.ToDouble(peso);
+            double alturaC = Convert.ToDouble(altura);
             double imc = 0;
             imc = pesoC / ((alturaC * alturaC) / 10000);
             return imc;
