@@ -96,9 +96,8 @@ namespace BloodCrowdService
 
                 foreach (var dm in xdoc.Descendants("Donator"))
                 {
-
                     int comparar = Convert.ToInt32(dm.Attribute("id").Value);
-
+                        
                     if (comparar.Equals(Convert.ToInt32(number)))
                     {
 
