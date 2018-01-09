@@ -255,6 +255,7 @@ namespace BloodCrowdService
             List<Donator> listDonators = new List<Donator>();
 
             IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+            IFormatProvider cultureint = new System.Globalization.CultureInfo("pt-PT", true);
 
             try
             {
@@ -262,7 +263,7 @@ namespace BloodCrowdService
 
                 foreach (var dm in xdoc.Descendants("Donator"))
                 {
-                    IFormatProvider cultureint = new System.Globalization.CultureInfo("pt-PT", true);
+                    
                     int comparar = Convert.ToInt32(dm.Attribute("id").Value);
                     
                     if (comparar.Equals(Convert.ToInt32(number)))
