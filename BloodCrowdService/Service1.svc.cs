@@ -200,6 +200,8 @@ namespace BloodCrowdService
 
         public bool AddNewDonator(Donator bd)
         {
+
+            IFormatProvider cultureint = new System.Globalization.CultureInfo("pt-PT", true);
             XmlDocument doc = new XmlDocument();
 
             doc.Load(FILEPATH);
@@ -286,7 +288,7 @@ namespace BloodCrowdService
 
             XmlElement peso = doc.CreateElement("Peso");
             donator.AppendChild(peso);
-            peso.InnerText = Convert.ToString(bd.Kilograms);
+            peso.InnerText = Convert.ToString(bd.Kilograms, cultureint);
 
             XmlElement altura = doc.CreateElement("Altura");
             donator.AppendChild(altura);
