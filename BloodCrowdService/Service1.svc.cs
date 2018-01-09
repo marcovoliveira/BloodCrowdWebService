@@ -30,7 +30,7 @@ namespace BloodCrowdService
             List<Donator> listDonators = new List<Donator>();
 
             IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
-          
+            IFormatProvider cultureint = new System.Globalization.CultureInfo("pt-PT", true);
 
 
             try
@@ -59,7 +59,7 @@ namespace BloodCrowdService
                     String empresa = dm.Element("Empresa").Value;
                     String veiculo = dm.Element("Veiculo").Value;
                     String tipo_sangue = dm.Element("Tipo_Sanguineo").Value;
-                    double peso = Convert.ToDouble(dm.Element("Peso").Value, CultureInfo.GetCultureInfo("pt-PT"));
+                    double peso = Convert.ToDouble(dm.Element("Peso").Value, cultureint);
                     double altura = Convert.ToDouble(dm.Element("Altura").Value);
                     String guid = dm.Element("GUID").Value;
                     String latitude = dm.Element("Latitude").Value;
