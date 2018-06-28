@@ -25,8 +25,6 @@ namespace BloodCrowdService
         List<ShortDonator> GetDonatorsShort();
 
 
-        // XML NAO SAI DO SERVIÇO! Tudo o que passamos é objetos de classes! 
-
         // Adicionar dador
 
         [OperationContract]
